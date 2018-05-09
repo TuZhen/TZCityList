@@ -6,17 +6,17 @@
 //  Copyright © 2018年 kinglian. All rights reserved.
 //
 
-#import "KLCityListTableViewCell.h"
+#import "TZCityListTableViewCell.h"
 #define ColorNormal [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
 #define ColorRed [UIColor colorWithRed:255/255.0 green:110/255.0 blue:110/255.0 alpha:1]
 
-@interface KLCityListTableViewCell()
+@interface TZCityListTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *selectedSign;
 
 @end
 
-@implementation KLCityListTableViewCell
+@implementation TZCityListTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

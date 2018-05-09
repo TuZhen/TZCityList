@@ -6,8 +6,8 @@
 //  Copyright © 2018年 kinglian. All rights reserved.
 //
 
-#import "KLCityListManage.h"
-#import "KLCityModel.h"
+#import "TZCityListManage.h"
+#import "TZCityModel.h"
 
 @interface TZCityListManage ()
 
@@ -29,7 +29,7 @@
     NSMutableArray *cityList = [NSMutableArray array];
     FMResultSet *resultSet = [self.dataBase executeQuery:@"select * from city where parentId = ?",parentID];
     while ([resultSet next]) {
-        KLCityModel *city = [[KLCityModel alloc] init];
+        TZCityModel *city = [[TZCityModel alloc] init];
         city.name = [resultSet stringForColumn:@"name"];
         city.parentId = [resultSet intForColumn:@"parentId"];
         city.Id = [resultSet intForColumn:@"id"];

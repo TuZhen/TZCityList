@@ -7,7 +7,7 @@
 //
 
 #import "TZViewController.h"
-#import "TZCityListHeader.h"
+#import "TZCityListMainView.h"
 @interface TZViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 

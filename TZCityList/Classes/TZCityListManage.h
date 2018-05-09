@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <FMDB/FMDB.h>
-@interface KLCityListManage : NSObject
+@interface TZCityListManage : NSObject
 - (instancetype)initWithDatabase:(FMDatabase *)database;
 - (NSArray *)getCityListWithParentID:(NSString *)parentID;
 @end

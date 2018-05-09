@@ -7,11 +7,11 @@
 //
 
 #import "TZCityListCollectionCell.h"
-#import "KLCityListTableViewCell.h"
-#import "KLCityModel.h"
+#import "TZCityListTableViewCell.h"
+#import "TZCityModel.h"
 
-static NSString *KLCityListTableViewCellID = @"KLCityListTableViewCell";
-@interface KLCityListCollectionCell()<UITableViewDataSource,UITableViewDelegate>
+static NSString *TZCityListTableViewCellID = @"TZCityListTableViewCell";
+@interface TZCityListCollectionCell()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic ,strong) UITableView * myTableView; //
 
 @end
@@ -35,8 +35,8 @@ static NSString *KLCityListTableViewCellID = @"KLCityListTableViewCell";
     return self.tableViewDataSource.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    KLCityListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:KLCityListTableViewCellID];
-    KLCityModel *model = self.tableViewDataSource[indexPath.row];
+    TZCityListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TZCityListTableViewCellID];
+    TZCityModel *model = self.tableViewDataSource[indexPath.row];
     cell.cityName = model.name;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.cityIsSelected = NO;
@@ -62,7 +62,7 @@ static NSString *KLCityListTableViewCellID = @"KLCityListTableViewCell";
     _myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
-    [_myTableView registerNib:[UINib nibWithNibName:@"KLCityListTableViewCell" bundle:nil] forCellReuseIdentifier:KLCityListTableViewCellID];
+    [_myTableView registerNib:[UINib nibWithNibName:@"KLCityListTableViewCell" bundle:[NSBundle bundleForClass:[self class]]] forCellReuseIdentifier:TZCityListTableViewCellID];
     _myTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 15)];
     return _myTableView;
 }

@@ -7,19 +7,19 @@
 //
 
 #import "TZCityListMainView.h"
-#import "KLCityListManage.h"
+#import "TZCityListManage.h"
 #import "TZCityListCollectionCell.h"
-#import "KLCityModel.h"
+#import "TZCityModel.h"
 #import "TZCityListMainHeaderView.h"
 
 
-static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
+static NSString *TZCityListCollectionCellID = @"TZCityListCollectionCell.h";
 @interface TZCityListMainView ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,KLCityListCollectionCellDelegate>
 @property (nonatomic ,strong) UICollectionView * myCollectionView; //
 @property (nonatomic ,strong) TZCityListMainHeaderView * headerView; //
 
 @property (nonatomic ,strong) NSMutableArray * dataSource; //数据源
-@property (nonatomic ,strong) KLCityListManage * cityListManage; //
+@property (nonatomic ,strong) TZCityListManage * cityListManage; //
 @property (nonatomic ,strong) NSMutableArray * parentIDArr; //
 @property (nonatomic,strong) NSMutableDictionary *selectedCityDic;
 @property (nonatomic ,strong) NSMutableArray * cityNameArr; //
@@ -83,8 +83,8 @@ static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
             }
         }
         //重新添加选中city
-        [self.selectedCityDic setObject:[NSString stringWithFormat:@"%ld",selectedIndex] forKey:parentID];
-        NSString *cityName = [(KLCityModel *)self.dataSource[currentIndex][selectedIndex] name];
+        [self.selectedCityDic setObject:[NSString stringWithFormat:@"%ld",(long)selectedIndex] forKey:parentID];
+        NSString *cityName = [(TZCityModel *)self.dataSource[currentIndex][selectedIndex] name];
         [self.cityNameArr addObject:cityName];
         
         NSArray *cityArr = [self.cityListManage getCityListWithParentID:cityCode];
@@ -162,7 +162,7 @@ static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
     }];
 }
 #pragma mark - KLCityListCollectionCellDelegate
-- (void)cityCellDidSelected:(KLCityModel *)cityModel selectedIndex:(NSInteger)selectedIndex{
+- (void)cityCellDidSelected:(TZCityModel *)cityModel selectedIndex:(NSInteger)selectedIndex{
     __weak typeof(self) weakSelf = self;
     [self makedateSourceWithSelectedIndex:selectedIndex CityCode:[NSString stringWithFormat:@"%d",cityModel.code] AndParentID:[NSString stringWithFormat:@"%d",cityModel.parentId] SuccessBlcik:^{
         [weakSelf.headerView changeSelectedItemNameArr:self.cityNameArr isLast:NO];
@@ -184,7 +184,7 @@ static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
     return self.dataSource.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    TZCityListCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KLCityListCollectionCellID forIndexPath:indexPath];
+    TZCityListCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:TZCityListCollectionCellID forIndexPath:indexPath];
     NSString *selectedCityDicKey = self.parentIDArr[indexPath.row];
     NSString *selectedStr = self.selectedCityDic[selectedCityDicKey];
     cell.selectedIndexStr = selectedStr;
@@ -232,28 +232,31 @@ static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
     _cityNameArr = [NSMutableArray array];
     return _cityNameArr;
 }
-- (KLCityListManage *)cityListManage{
+- (TZCityListManage *)cityListManage{
     if (_cityListManage) {
         return _cityListManage;
     }
-    NSString *dbPath = [[NSBundle mainBundle] pathForResource:DB_NAME ofType:nil];
-    if (!dbPath) {
-        return nil;
-    }
-    //    NSLog(@"path is %@",dbPath);
-    //
-    //    NSFileManager *fm = [NSFileManager defaultManager];
-    //    BOOL isExist = [fm fileExistsAtPath:DB_NAME];
-    //    if (!isExist) {
-    //        NSString *backupDbPath = [[NSBundle mainBundle] pathForResource:DB_NAME ofType:nil];
-    //        [fm copyItemAtPath:backupDbPath toPath:dbPath error:nil];
-    //    }else{
-    //        NSLog(@"沙盒已经存在数据库文件");
-    //    }
+//    NSString *dbPath = [[NSBundle mainBundle] pathForResource:DB_NAME ofType:nil];
+    NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+    NSString *dbPath = [currentBundle pathForResource:DB_NAME ofType:nil];
+//    NSString *dbPath = [currentBundle pathForResource:@"City" ofType:@"db"];
+//    if (!dbPath) {
+//        return nil;
+//    }
+        NSLog(@"path is %@",dbPath);
+    
+        NSFileManager *fm = [NSFileManager defaultManager];
+        BOOL isExist = [fm fileExistsAtPath:DB_NAME];
+        if (!isExist) {
+            NSString *backupDbPath = [[NSBundle mainBundle] pathForResource:DB_NAME ofType:nil];
+            [fm copyItemAtPath:backupDbPath toPath:dbPath error:nil];
+        }else{
+            NSLog(@"沙盒已经存在数据库文件");
+        }
     
     FMDatabase * database = [ FMDatabase databaseWithPath:dbPath];
     if ([database open]) {
-        _cityListManage = [[KLCityListManage alloc] initWithDatabase:database];
+        _cityListManage = [[TZCityListManage alloc] initWithDatabase:database];
         return _cityListManage;
     }
     return nil;
@@ -276,7 +279,7 @@ static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
     _myCollectionView.backgroundColor = [UIColor whiteColor];
     _myCollectionView.dataSource = self;
     _myCollectionView.delegate = self;
-    [_myCollectionView registerClass:[TZCityListCollectionCell class] forCellWithReuseIdentifier:KLCityListCollectionCellID];
+    [_myCollectionView registerClass:[TZCityListCollectionCell class] forCellWithReuseIdentifier:TZCityListCollectionCellID];
     return _myCollectionView;
 }
 @end

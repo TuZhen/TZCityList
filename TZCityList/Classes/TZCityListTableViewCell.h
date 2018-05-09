@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KLCityListTableViewCell : UITableViewCell
+@interface TZCityListTableViewCell : UITableViewCell
 @property (nonatomic ,copy) NSString * cityName;//
 @property (nonatomic ,assign) BOOL cityIsSelected;
 @end

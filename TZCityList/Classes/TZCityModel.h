@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KLCityModel : NSObject
+@interface TZCityModel : NSObject
 @property (nonatomic ,assign) int parentId;//父级id
 @property (nonatomic ,assign) int code;//
 @property (nonatomic ,copy) NSString * name;//城市名
