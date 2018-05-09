@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 s.source_files = 'TZCityList/Classes/*.{h,m,xib}'
   s.dependency 'FMDB'
   s.resource_bundles = {
-    'TZCityList' => ['TZCityList/Resources/*.png']
+    'TZCityList' => ['TZCityList/Resources/*.png'],
     'TZCityList' => ['TZCityList/Resources/*.db']
   }
 
