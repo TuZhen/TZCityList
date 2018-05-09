@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'TZCityList_Example' do
+  pod 'TZCityList', :path => '../'
+
+  target 'TZCityList_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
