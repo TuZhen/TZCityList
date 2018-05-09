@@ -31,11 +31,12 @@ Pod::Spec.new do |s|
 
 s.source_files = 'TZCityList/Classes/*.{h,m,xib}'
   s.dependency 'FMDB'
-  s.resource_bundles = {
-#'TZCityList' => ['TZCityList/Resources/*.png'，]
-    'TZCityList' => ['TZCityList/Files/City.db']
+#s.resources = ["Image/*.png", "Files/*"]
+s.resource_bundles = {
+'TZCityList' => ['TZCityList/Image/*.png'，]
+#'TZCityList' => ['TZCityList/Files/City.db']
 
-  }
+}
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
