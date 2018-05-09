@@ -33,7 +33,7 @@
     TZCityListMainView *cityView = [[TZCityListMainView alloc] init];
     [cityView show];
     cityView.finishBlock = ^(NSArray *cityArr) {
-        weakSelf.cityLabel.text = [cityArr componentsJoinedByString:@"/t"];
+        weakSelf.cityLabel.text = [cityArr componentsJoinedByString:@"\t"];
     };
 }
 

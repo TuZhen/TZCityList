@@ -236,23 +236,21 @@ static NSString *TZCityListCollectionCellID = @"TZCityListCollectionCell.h";
     if (_cityListManage) {
         return _cityListManage;
     }
-//    NSString *dbPath = [[NSBundle mainBundle] pathForResource:DB_NAME ofType:nil];
     NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
-    NSString *dbPath = [currentBundle pathForResource:DB_NAME ofType:nil];
-//    NSString *dbPath = [currentBundle pathForResource:@"City" ofType:@"db"];
-//    if (!dbPath) {
-//        return nil;
-//    }
-        NSLog(@"path is %@",dbPath);
-    
-        NSFileManager *fm = [NSFileManager defaultManager];
-        BOOL isExist = [fm fileExistsAtPath:DB_NAME];
-        if (!isExist) {
-            NSString *backupDbPath = [[NSBundle mainBundle] pathForResource:DB_NAME ofType:nil];
-            [fm copyItemAtPath:backupDbPath toPath:dbPath error:nil];
-        }else{
-            NSLog(@"沙盒已经存在数据库文件");
-        }
+    NSString *dbPath = [currentBundle pathForResource:[DB_NAME stringByDeletingPathExtension] ofType:[DB_NAME pathExtension] inDirectory:@"TZCityList.bundle"];
+    if (!dbPath) {
+        return nil;
+    }
+//        NSLog(@"path is %@",dbPath);
+//
+//        NSFileManager *fm = [NSFileManager defaultManager];
+//        BOOL isExist = [fm fileExistsAtPath:DB_NAME];
+//        if (!isExist) {
+//            NSString *backupDbPath = [[NSBundle mainBundle] pathForResource:DB_NAME ofType:nil];
+//            [fm copyItemAtPath:backupDbPath toPath:dbPath error:nil];
+//        }else{
+//            NSLog(@"沙盒已经存在数据库文件");
+//        }
     
     FMDatabase * database = [ FMDatabase databaseWithPath:dbPath];
     if ([database open]) {

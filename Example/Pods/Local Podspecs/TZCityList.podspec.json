@@ -16,12 +16,17 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "TZCityList/Classes/*.{h,m}",
+  "source_files": "TZCityList/Classes/*.{h,m,xib}",
   "dependencies": {
     "FMDB": [
 
+    ]
+  },
+  "resource_bundles": {
+    "TZCityList": [
+      "TZCityList/Files/*.db"
     ]
   }
 }
