@@ -26,7 +26,7 @@
   },
   "resource_bundles": {
     "TZCityList": [
-      "TZCityList/Resources/*.db"
+      "TZCityList/Files/City.db"
     ]
   }
 }

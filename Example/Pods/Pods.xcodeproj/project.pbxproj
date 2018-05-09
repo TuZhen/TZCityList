@@ -18,6 +18,7 @@
 		3A9289404881E992BFC9EF11C6ACEF70 /* TZCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C51B4F88467DC317E145E35BF8000B /* TZCityModel.m */; };
 		3E43906B70EB01C06F3AE17008B853B9 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F546D17BEE96A3AC80F5733BACB23C /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4743268C90B0F7CF4594DBB51740FCB8 /* TZCityList-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0FF0B0FA97D9A4134F8DF9181CAE77 /* TZCityList-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		690231D145193DFF6C83F907EE581456 /* City.db in Resources */ = {isa = PBXBuildFile; fileRef = 533B78B849339F887E4F78A842D7ACE0 /* City.db */; };
 		72563ADE99DC9E753B27D48B16AA3654 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B339C607FE63DDDF6BCBABD479561B /* Foundation.framework */; };
 		7511CE7C8B258A4470A0281DCB3FE744 /* TZCityListCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BFC292143DEC4B40BFEF5D0A44EF616 /* TZCityListCollectionCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77650F65DF316E17DDE0180EB9528576 /* Pods-TZCityList_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4911E86031D1717C89E712673C9BE2A2 /* Pods-TZCityList_Tests-dummy.m */; };
@@ -41,7 +42,6 @@
 		CCB74062CE0F4B8E5B7483599BC398DA /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E08DD3F409CC910BDF9AAC0E1BEB35 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0857E9905FE4DFECC80D143AEE6CB39 /* TZCityListManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7FEA124C060B04AFD14D8A4C41B9C1 /* TZCityListManage.m */; };
 		D5991941DC41DDDDDACAE0B5D47A4639 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7087B4CE1CC6C4CE6D26FC6F6B49BA4B /* FMDB-dummy.m */; };
-		EB08C44076AE388689A31E925481A152 /* City.db in Resources */ = {isa = PBXBuildFile; fileRef = 96EB8CD2A8934D3FDC914EF6E9FB0638 /* City.db */; };
 		EBA4ADD8E6C56D7557685F52E462023C /* TZCityListMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDD1D62BF066ED4F3602C495DA20E30 /* TZCityListMainView.m */; };
 		F11FAB91014130EE233A3429439D38D7 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CFEEF64A76609C0E88017B38B7E12DA /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F82FC255288F660E3DC870786140A5FE /* TZCityListMainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B808BFFF7166CFC92CF6558F4711F6 /* TZCityListMainHeaderView.m */; };
@@ -110,6 +110,7 @@
 		48359ABEBEB9487DB74DAE254653B579 /* TZCityList-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TZCityList-prefix.pch"; sourceTree = "<group>"; };
 		4911E86031D1717C89E712673C9BE2A2 /* Pods-TZCityList_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TZCityList_Tests-dummy.m"; sourceTree = "<group>"; };
 		4B97A597AFE8B5A90EDFF8560393C46B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		533B78B849339F887E4F78A842D7ACE0 /* City.db */ = {isa = PBXFileReference; includeInIndex = 1; name = City.db; path = TZCityList/Files/City.db; sourceTree = "<group>"; };
 		57B339C607FE63DDDF6BCBABD479561B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		596AAFADD35EDF0D0690FF57D44DDC3D /* Pods-TZCityList_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TZCityList_Tests.modulemap"; sourceTree = "<group>"; };
 		5B4D21C1CF2123CFA7F6CA79D9416113 /* TZCityList-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TZCityList-dummy.m"; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		8DF62A1F971FFFC84C36F474CF296297 /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
 		900F78D08F04CE749FB54FF06EB406C2 /* TZCityList.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TZCityList.bundle; path = "TZCityList-TZCityList.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96EB8CD2A8934D3FDC914EF6E9FB0638 /* City.db */ = {isa = PBXFileReference; includeInIndex = 1; name = City.db; path = TZCityList/Resources/City.db; sourceTree = "<group>"; };
 		9AF5E4709EFE9C72EE0DFCE9F02B68A8 /* Pods-TZCityList_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TZCityList_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9BFC292143DEC4B40BFEF5D0A44EF616 /* TZCityListCollectionCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZCityListCollectionCell.h; path = TZCityList/Classes/TZCityListCollectionCell.h; sourceTree = "<group>"; };
 		9E7FEA124C060B04AFD14D8A4C41B9C1 /* TZCityListManage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZCityListManage.m; path = TZCityList/Classes/TZCityListManage.m; sourceTree = "<group>"; };
@@ -233,19 +233,11 @@
 				A7A2E92E2040E95A65E1E40208D11FD3 /* TZCityModel.h */,
 				67C51B4F88467DC317E145E35BF8000B /* TZCityModel.m */,
 				DEFFC43F35A55D8B976A12DE5D3F2DA0 /* Pod */,
-				2343354DE0DB126111B9A66F8DF2AC26 /* Resources */,
+				A270A6A8B2C9AB2A76D0458D6CBE7AD5 /* Resources */,
 				5E7E58F47F038E264EA947D3EAB3E704 /* Support Files */,
 			);
 			name = TZCityList;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		2343354DE0DB126111B9A66F8DF2AC26 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				96EB8CD2A8934D3FDC914EF6E9FB0638 /* City.db */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		2E8A70666402923F61614F521EE0CA29 /* FMDB */ = {
@@ -326,6 +318,14 @@
 				5D7826516979A4640820675A4CC68F7B /* Pods-TZCityList_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A270A6A8B2C9AB2A76D0458D6CBE7AD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				533B78B849339F887E4F78A842D7ACE0 /* City.db */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		BFB8C92E749ED180124155E2270474D2 /* Pods */ = {
@@ -587,7 +587,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB08C44076AE388689A31E925481A152 /* City.db in Resources */,
+				690231D145193DFF6C83F907EE581456 /* City.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
