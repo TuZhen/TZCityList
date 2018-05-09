@@ -1,0 +1,6 @@
+framework module TZCityList {
+  umbrella header "TZCityList-umbrella.h"
+
+  export *
+  module * { export * }
+}

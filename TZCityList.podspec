@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'TZCityList'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of TZCityList.'
+  s.summary          = '进行地理位置的选择'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
                        DESC
-
+该库实现地理位置选择的功能，例如京东收货地址选择
   s.homepage         = 'https://github.com/TuZhen/TZCityList'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

@@ -1,0 +1,16 @@
+PODS:
+  - TZCityList (0.1.0)
+
+DEPENDENCIES:
+  - TZCityList (from `../`)
+
+EXTERNAL SOURCES:
+  TZCityList:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TZCityList: 4195d9351c2633c112c66100b93a4cb038e0dc03
+
+PODFILE CHECKSUM: acfde064887ee1b0ecc8a31a5bbecff88d4e82bd
+
+COCOAPODS: 1.5.0
