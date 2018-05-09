@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KLCityListMainHeaderView : UIView
+@interface TZCityListMainHeaderView : UIView
 - (void)changeSelectedItemNameArr:(NSArray<NSString *>*)itemNameArr isLast:(BOOL)isLast;
 - (void)changeSelectedSignViewCenterWithItemIndex:(NSInteger)itemIndex;
 @property (nonatomic ,copy) void(^cancelBtnDidClickBlock)(void);

@@ -6,8 +6,8 @@
 //  Copyright © 2018年 kinglian. All rights reserved.
 //
 
-#import "KLCityModel.h"
+#import "TZCityModel.h"
 
-@implementation KLCityModel
+@implementation TZCityModel
 
 @end

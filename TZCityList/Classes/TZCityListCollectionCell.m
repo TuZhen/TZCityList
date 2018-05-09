@@ -6,7 +6,7 @@
 //  Copyright © 2018年 kinglian. All rights reserved.
 //
 
-#import "KLCityListCollectionCell.h"
+#import "TZCityListCollectionCell.h"
 #import "KLCityListTableViewCell.h"
 #import "KLCityModel.h"
 
@@ -15,7 +15,7 @@ static NSString *KLCityListTableViewCellID = @"KLCityListTableViewCell";
 @property (nonatomic ,strong) UITableView * myTableView; //
 
 @end
-@implementation KLCityListCollectionCell
+@implementation TZCityListCollectionCell
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {

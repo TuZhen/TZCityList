@@ -9,14 +9,14 @@
 #import "KLCityListManage.h"
 #import "KLCityModel.h"
 
-@interface KLCityListManage ()
+@interface TZCityListManage ()
 
 @property (nonatomic ,strong) FMDatabase * dataBase;
 
 
 @end
 
-@implementation KLCityListManage
+@implementation TZCityListManage
 
 - (instancetype)initWithDatabase:(FMDatabase *)database{
     if (self = [super init]) {

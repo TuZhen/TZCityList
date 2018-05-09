@@ -11,7 +11,7 @@
 @protocol KLCityListCollectionCellDelegate<NSObject>
 - (void)cityCellDidSelected:(KLCityModel *)cityModel selectedIndex:(NSInteger)selectedIndex;
 @end
-@interface KLCityListCollectionCell : UICollectionViewCell
+@interface TZCityListCollectionCell : UICollectionViewCell
 @property (nonatomic ,strong) NSArray * tableViewDataSource; //
 @property (nonatomic, weak) id <KLCityListCollectionCellDelegate>delegate;
 @property (nonatomic ,copy) NSString *selectedIndexStr;//选中项纪录

@@ -1,8 +1,8 @@
 {
   "name": "TZCityList",
   "version": "0.1.0",
-  "summary": "A short description of TZCityList.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "进行地理位置的选择",
+  "description": "该库实现地理位置选择的功能，例如京东收货地址选择",
   "homepage": "https://github.com/TuZhen/TZCityList",
   "license": {
     "type": "MIT",
@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "TZCityList/Classes/**/*"
+  "source_files": "TZCityList/Classes/*.{h,m}",
+  "dependencies": {
+    "FMDB": [
+
+    ]
+  }
 }

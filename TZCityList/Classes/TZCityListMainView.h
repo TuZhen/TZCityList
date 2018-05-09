@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KLCityListMainView : UIView
+@interface TZCityListMainView : UIView
 - (void)show;
 @property (nonatomic ,copy) void(^finishBlock)(NSArray *cityArr);
 @end

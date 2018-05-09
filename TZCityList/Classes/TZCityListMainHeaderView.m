@@ -6,13 +6,13 @@
 //  Copyright © 2018年 kinglian. All rights reserved.
 //
 
-#import "KLCityListMainHeaderView.h"
+#import "TZCityListMainHeaderView.h"
 #define ColorNormal [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
 #define ColorRed [UIColor colorWithRed:255/255.0 green:110/255.0 blue:110/255.0 alpha:1]
 
 static CGFloat leftSpace = 15;
 static CGFloat itemSuperViewHeight = 30;
-@interface KLCityListMainHeaderView()
+@interface TZCityListMainHeaderView()
 @property (nonatomic ,strong) UIButton *selectedCityBtn; //请选择按钮
 @property (nonatomic ,strong) UIView * itemSuperView; //添加地址按钮的父视图层
 @property (nonatomic ,strong) UIView * selectedSignView; //选中标记view
@@ -24,7 +24,7 @@ static CGFloat itemSuperViewHeight = 30;
 
 
 @end
-@implementation KLCityListMainHeaderView
+@implementation TZCityListMainHeaderView
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {

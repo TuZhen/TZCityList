@@ -6,17 +6,17 @@
 //  Copyright © 2018年 kinglian. All rights reserved.
 //
 
-#import "KLCityListMainView.h"
+#import "TZCityListMainView.h"
 #import "KLCityListManage.h"
-#import "KLCityListCollectionCell.h"
+#import "TZCityListCollectionCell.h"
 #import "KLCityModel.h"
-#import "KLCityListMainHeaderView.h"
+#import "TZCityListMainHeaderView.h"
 
 
 static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
-@interface KLCityListMainView ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,KLCityListCollectionCellDelegate>
+@interface TZCityListMainView ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,KLCityListCollectionCellDelegate>
 @property (nonatomic ,strong) UICollectionView * myCollectionView; //
-@property (nonatomic ,strong) KLCityListMainHeaderView * headerView; //
+@property (nonatomic ,strong) TZCityListMainHeaderView * headerView; //
 
 @property (nonatomic ,strong) NSMutableArray * dataSource; //数据源
 @property (nonatomic ,strong) KLCityListManage * cityListManage; //
@@ -28,7 +28,7 @@ static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
 
 @end
 #define DB_NAME  @"City.db"
-@implementation KLCityListMainView
+@implementation TZCityListMainView
 - (instancetype)init{
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     if (self = [super initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)]) {
@@ -49,7 +49,7 @@ static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
     
     CGFloat headerViewHeight = 65;
     CGFloat headerViewY = myCollecionViewY - headerViewHeight;
-    _headerView = [[KLCityListMainHeaderView alloc] initWithFrame:CGRectMake(0, headerViewY, screenSize.width, headerViewHeight)];
+    _headerView = [[TZCityListMainHeaderView alloc] initWithFrame:CGRectMake(0, headerViewY, screenSize.width, headerViewHeight)];
     __weak typeof(self) weakSelf = self;
     _headerView.cancelBtnDidClickBlock = ^{
         [weakSelf dismissAction];
@@ -184,7 +184,7 @@ static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
     return self.dataSource.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    KLCityListCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KLCityListCollectionCellID forIndexPath:indexPath];
+    TZCityListCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KLCityListCollectionCellID forIndexPath:indexPath];
     NSString *selectedCityDicKey = self.parentIDArr[indexPath.row];
     NSString *selectedStr = self.selectedCityDic[selectedCityDicKey];
     cell.selectedIndexStr = selectedStr;
@@ -276,7 +276,7 @@ static NSString *KLCityListCollectionCellID = @"KLCityListCollectionCell";
     _myCollectionView.backgroundColor = [UIColor whiteColor];
     _myCollectionView.dataSource = self;
     _myCollectionView.delegate = self;
-    [_myCollectionView registerClass:[KLCityListCollectionCell class] forCellWithReuseIdentifier:KLCityListCollectionCellID];
+    [_myCollectionView registerClass:[TZCityListCollectionCell class] forCellWithReuseIdentifier:KLCityListCollectionCellID];
     return _myCollectionView;
 }
 @end
