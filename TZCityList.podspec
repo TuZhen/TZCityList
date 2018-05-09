@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TZCityList'
-  s.version          = '0.1.0'
+  s.version          = '0.0.1'
   s.summary          = '进行地理位置的选择'
 
 # This description is used to generate tags and improve search results.
@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
 s.source_files = 'TZCityList/Classes/*.{h,m,xib}'
   s.dependency 'FMDB'
   s.resource_bundles = {
-#'TZCityList' => ['TZCityList/Assets/*.png']
-    'TZCityList' => ['TZCityList/Files/*.db']
+    'TZCityList' => ['TZCityList/Resources/*.png']
+    'TZCityList' => ['TZCityList/Resources/*.db']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
