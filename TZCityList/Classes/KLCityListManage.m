@@ -1,0 +1,50 @@
+//
+//  TZCityListView.m
+//  TZTest
+//
+//  Created by kinglian on 2018/4/27.
+//  Copyright © 2018年 kinglian. All rights reserved.
+//
+
+#import "KLCityListManage.h"
+#import "KLCityModel.h"
+
+@interface KLCityListManage ()
+
+@property (nonatomic ,strong) FMDatabase * dataBase;
+
+
+@end
+
+@implementation KLCityListManage
+
+- (instancetype)initWithDatabase:(FMDatabase *)database{
+    if (self = [super init]) {
+        _dataBase = database;
+    }
+    return self;
+}
+- (NSArray *)getCityListWithParentID:(NSString *)parentID{
+    
+    NSMutableArray *cityList = [NSMutableArray array];
+    FMResultSet *resultSet = [self.dataBase executeQuery:@"select * from city where parentId = ?",parentID];
+    while ([resultSet next]) {
+        KLCityModel *city = [[KLCityModel alloc] init];
+        city.name = [resultSet stringForColumn:@"name"];
+        city.parentId = [resultSet intForColumn:@"parentId"];
+        city.Id = [resultSet intForColumn:@"id"];
+        city.code = [resultSet intForColumn:@"code"];
+        [cityList addObject:city];
+    }
+    return cityList;
+}
+
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
+
+@end

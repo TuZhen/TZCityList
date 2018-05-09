@@ -8,6 +8,7 @@
 
 #import "TZViewController.h"
 
+
 @interface TZViewController ()
 
 @end
@@ -17,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

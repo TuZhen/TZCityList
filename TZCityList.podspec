@@ -18,9 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
 该库实现地理位置选择的功能，例如京东收货地址选择
+                       DESC
   s.homepage         = 'https://github.com/TuZhen/TZCityList'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -30,8 +29,8 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'TZCityList/Classes/**/*'
-  
+s.source_files = 'TZCityList/Classes/*.{h,m}'
+  s.dependency 'FMDB'
   # s.resource_bundles = {
   #   'TZCityList' => ['TZCityList/Assets/*.png']
   # }
