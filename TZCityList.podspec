@@ -29,15 +29,15 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-#s.source_files = 'TZCityList/Classes/*.{h,m}','TZCityList/*.h'
-s.source_files = 'TZCityList/*'
-  s.dependency 'FMDB'
-#s.resources = ["Image/*.png", "Files/*"]
+s.source_files = 'TZCityList/Classes/*.{h,m}','TZCityList/*.h'
 s.resource_bundles = {
     'TZCityList' => ['TZCityList/Classes/*.{xib,db,png}']
     #'TZCityList' => ['TZCityList/MyResources/*.{xib,db,png}']
     #'TZCityList' => ['TZCityList/Image/*.{png,db}']
 }
+s.dependency 'FMDB'
+#s.resources = ["Image/*.png", "Files/*"]
+
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
