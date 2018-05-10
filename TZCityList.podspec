@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-s.source_files = 'TZCityList/Classes/*.{h,m}'
+s.source_files = 'TZCityList/Classes/*.{h,m}','TZCityList/*.h'
   s.dependency 'FMDB'
 #s.resources = ["Image/*.png", "Files/*"]
 s.resource_bundles = {

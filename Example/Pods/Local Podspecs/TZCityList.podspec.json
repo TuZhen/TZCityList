@@ -23,7 +23,7 @@
   },
   "resource_bundles": {
     "TZCityList": [
-      "TZCityList/MyResources/*.{xib,db,png}"
+      "TZCityList/Classes/*.{xib,db,png}"
     ]
   }
 }
