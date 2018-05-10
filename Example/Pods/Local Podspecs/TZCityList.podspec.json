@@ -15,7 +15,10 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "TZCityList/Classes/*.{h,m}",
+  "source_files": [
+    "TZCityList/Classes/*.{h,m}",
+    "TZCityList/*.h"
+  ],
   "dependencies": {
     "FMDB": [
 

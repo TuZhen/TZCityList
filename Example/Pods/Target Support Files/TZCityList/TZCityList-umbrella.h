@@ -16,6 +16,7 @@
 #import "TZCityListManage.h"
 #import "TZCityListTableViewCell.h"
 #import "TZCityModel.h"
+#import "TZCityList.h"
 
 FOUNDATION_EXPORT double TZCityListVersionNumber;
 FOUNDATION_EXPORT const unsigned char TZCityListVersionString[];
