@@ -15,15 +15,18 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "TZCityList/*",
-  "dependencies": {
-    "FMDB": [
-
-    ]
-  },
+  "source_files": [
+    "TZCityList/Classes/*.{h,m}",
+    "TZCityList/*.h"
+  ],
   "resource_bundles": {
     "TZCityList": [
       "TZCityList/Classes/*.{xib,db,png}"
+    ]
+  },
+  "dependencies": {
+    "FMDB": [
+
     ]
   }
 }
