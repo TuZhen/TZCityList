@@ -22,20 +22,20 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = 'https://github.com/TuZhen/TZCityList'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = 'MIT'
   s.author           = { 'TuZhen' => '13926437204@163.com' }
   s.source           = { :git => 'https://github.com/TuZhen/TZCityList.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
 
-s.source_files = 'TZCityList/Classes/*.{h,m,xib}'
+s.source_files = 'TZCityList/Classes/*.{h,m}'
   s.dependency 'FMDB'
 #s.resources = ["Image/*.png", "Files/*"]
+s.frameworks = 'TZCityList'
 s.resource_bundles = {
-'TZCityList' => ['TZCityList/Image/*.png'，]
-#'TZCityList' => ['TZCityList/Files/City.db']
-
+    'TZCityList' => ['TZCityList/Classes/*.{xib,db}']
+    #'TZCityList' => ['TZCityList/Image/*.{png,db}']
 }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
