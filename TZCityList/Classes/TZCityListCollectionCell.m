@@ -62,7 +62,11 @@ static NSString *TZCityListTableViewCellID = @"TZCityListTableViewCell";
     _myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
-    [_myTableView registerNib:[UINib nibWithNibName:@"TZCityListTableViewCell" bundle:[NSBundle bundleForClass:[self class]]] forCellReuseIdentifier:TZCityListTableViewCellID];
+    NSBundle *podBundle = [NSBundle bundleForClass:[self class]];
+    NSString *bundlePath = [podBundle pathForResource:@"TZCityList" ofType:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    UINib *cellNib = [UINib nibWithNibName:@"TZCityListTableViewCell" bundle:bundle];
+    [_myTableView registerNib:cellNib forCellReuseIdentifier:TZCityListTableViewCellID];
     _myTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 15)];
     return _myTableView;
 }

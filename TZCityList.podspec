@@ -33,7 +33,7 @@ s.source_files = 'TZCityList/Classes/*.{h,m}'
   s.dependency 'FMDB'
 #s.resources = ["Image/*.png", "Files/*"]
 s.resource_bundles = {
-    'TZCityList' => ['TZCityList/Classes/*.{xib,db}']
+    'TZCityList' => ['TZCityList/MyResources/*.{xib,db,png}']
     #'TZCityList' => ['TZCityList/Image/*.{png,db}']
 }
 
