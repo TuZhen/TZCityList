@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TZCityList'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = '进行地理位置的选择'
 
 # This description is used to generate tags and improve search results.
