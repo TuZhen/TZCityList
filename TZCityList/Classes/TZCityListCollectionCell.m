@@ -63,7 +63,7 @@ static NSString *TZCityListTableViewCellID = @"TZCityListTableViewCell";
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
     NSBundle *podBundle = [NSBundle bundleForClass:[self class]];
-    NSString *bundlePath = [podBundle pathForResource:@"TZCityList" ofType:@"bundle"];
+    NSString *bundlePath = [podBundle pathForResource:@"TZCityListResources" ofType:@"bundle"];
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
     UINib *cellNib = [UINib nibWithNibName:@"TZCityListTableViewCell" bundle:bundle];
     [_myTableView registerNib:cellNib forCellReuseIdentifier:TZCityListTableViewCellID];

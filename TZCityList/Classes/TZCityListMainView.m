@@ -237,7 +237,7 @@ static NSString *TZCityListCollectionCellID = @"TZCityListCollectionCell.h";
         return _cityListManage;
     }
     NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
-    NSString *dbPath = [currentBundle pathForResource:[DB_NAME stringByDeletingPathExtension] ofType:[DB_NAME pathExtension] inDirectory:@"TZCityList.bundle"];
+    NSString *dbPath = [currentBundle pathForResource:[DB_NAME stringByDeletingPathExtension] ofType:[DB_NAME pathExtension] inDirectory:@"TZCityListResources.bundle"];
     if (!dbPath) {
         return nil;
     }
