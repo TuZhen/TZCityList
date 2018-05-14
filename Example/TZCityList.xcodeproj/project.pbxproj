@@ -247,6 +247,9 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = TuZhen;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = U9X3F7RV9T;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -513,6 +516,7 @@
 			baseConfigurationReference = 964B40BC4A5E9A0784B28D97 /* Pods-TZCityList_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U9X3F7RV9T;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TZCityList/TZCityList-Prefix.pch";
 				INFOPLIST_FILE = "TZCityList/TZCityList-Info.plist";
@@ -528,6 +532,7 @@
 			baseConfigurationReference = 06D30718B342E02A845F0D82 /* Pods-TZCityList_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U9X3F7RV9T;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TZCityList/TZCityList-Prefix.pch";
 				INFOPLIST_FILE = "TZCityList/TZCityList-Info.plist";

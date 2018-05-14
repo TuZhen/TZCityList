@@ -34,9 +34,7 @@ s.source_files = 'TZCityList/Classes/*.{h,m}','TZCityList/*.h'
 s.dependency 'FMDB'
 #s.resources = ["Image/*.png", "Files/*"]
 s.resource_bundles = {
-    #'TZCityList' => ['TZCityList/Classes/*.{xib,db,png}'],
     'TZCityListResources' => ['TZCityList/MyResources/*.{xib,db,png}']
-    #'TZCityList' => ['TZCityList/Image/*.{png,db}']
 }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

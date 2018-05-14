@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TZCityListMainView : UIView
+- (instancetype)initWithSelectedColor:(UIColor *)selectedColor;
 - (void)show;
 @property (nonatomic ,copy) void(^finishBlock)(NSArray *cityArr);
+
+
 @end

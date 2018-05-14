@@ -30,7 +30,7 @@
 }
 - (IBAction)btnDIdClickAction:(id)sender {
     __weak typeof(self) weakSelf = self;
-    TZCityListMainView *cityView = [[TZCityListMainView alloc] init];
+    TZCityListMainView *cityView = [[TZCityListMainView alloc] initWithSelectedColor:[UIColor greenColor]];
     [cityView show];
     cityView.finishBlock = ^(NSArray *cityArr) {
         weakSelf.cityLabel.text = [cityArr componentsJoinedByString:@"\t"];
