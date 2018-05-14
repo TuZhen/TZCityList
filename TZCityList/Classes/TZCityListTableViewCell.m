@@ -7,9 +7,9 @@
 //
 
 #import "TZCityListTableViewCell.h"
-#define ColorNormal [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
-#define ColorRed [UIColor colorWithRed:255/255.0 green:110/255.0 blue:110/255.0 alpha:1]
-
+#import "TZCityListSelectedStyle.h"
+#import "TZCityListSelectedStyle.h"
+#define TextColorNormal [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
 @interface TZCityListTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *selectedSign;
@@ -20,7 +20,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    [self.selectedSign setImage:[TZCityListSelectedStyle selectedStyle].selectedCellSignImage forState:UIControlStateNormal];
 }
 - (void)setCityName:(NSString *)cityName{
     _cityName = cityName;
@@ -30,11 +30,11 @@
 - (void)setCityIsSelected:(BOOL)cityIsSelected{
     _cityIsSelected = cityIsSelected;
     if (cityIsSelected) {
-        self.cityNameLabel.textColor = ColorRed;
+        self.cityNameLabel.textColor = [TZCityListSelectedStyle selectedStyle].selectedColor;
         self.selectedSign.hidden = NO;
         NSLog(@"选中City:%@",self.cityName);
     }else{
-        self.cityNameLabel.textColor = ColorNormal;
+        self.cityNameLabel.textColor = TextColorNormal;
         self.selectedSign.hidden = YES;
         
     }

@@ -7,8 +7,9 @@
 //
 
 #import "TZCityListMainHeaderView.h"
-#define ColorNormal [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
-#define ColorRed [UIColor colorWithRed:255/255.0 green:110/255.0 blue:110/255.0 alpha:1]
+#import "TZCityListSelectedStyle.h"
+#define TextColorNormal [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
+
 
 static CGFloat leftSpace = 15;
 static CGFloat itemSuperViewHeight = 30;
@@ -26,7 +27,7 @@ static CGFloat itemSuperViewHeight = 30;
 @end
 @implementation TZCityListMainHeaderView
 
-- (instancetype)initWithFrame:(CGRect)frame WithSelectedColor:(UIColor *)selecterColor{
+- (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
         UILabel *titleLabel = [[UILabel alloc] init];
@@ -41,12 +42,18 @@ static CGFloat itemSuperViewHeight = 30;
         
         
         UIButton *cancelBtn = [[UIButton alloc] init];
-        [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+        NSBundle *podBundle = [NSBundle bundleForClass:[self class]];
+        NSString *TZCityListResourcesBundlePath = [podBundle pathForResource:@"TZCityListResources" ofType:@"bundle"];
+        NSBundle *TZCityListResourcesBundle = [NSBundle bundleWithPath:TZCityListResourcesBundlePath];
+        NSString *imagePath = [TZCityListResourcesBundle pathForResource:@"ic_btn_close@2x" ofType:@"png"];
+        UIImage *cancelImage = [UIImage imageWithContentsOfFile:imagePath];
+        [cancelBtn setImage:cancelImage forState:UIControlStateNormal];
         cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         [cancelBtn setTitleColor:[UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1] forState:UIControlStateNormal];
         [cancelBtn sizeToFit];
         CGFloat cancelBtnWH = self.frame.size.height-itemSuperViewHeight;
         cancelBtn.frame = CGRectMake(self.bounds.size.width-cancelBtnWH, 3, cancelBtnWH, cancelBtnWH);
+        cancelBtn.imageEdgeInsets = UIEdgeInsetsMake(-5, 0, 5, 0);
         [cancelBtn addTarget:self action:@selector(cancelBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:cancelBtn];
         
@@ -59,18 +66,17 @@ static CGFloat itemSuperViewHeight = 30;
         [self addSubview:itemSuperView];
         _itemSuperView = itemSuperView;
         
-        
         UIButton *selectedCityBtn = [[UIButton alloc] init];
         selectedCityBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-        [selectedCityBtn setTitleColor:selecterColor?:ColorRed forState:UIControlStateNormal];
+        [selectedCityBtn setTitleColor:[TZCityListSelectedStyle selectedStyle].selectedColor forState:UIControlStateNormal];
         [selectedCityBtn setTitle:@"请选择" forState:UIControlStateNormal];
         [selectedCityBtn sizeToFit];
         selectedCityBtn.frame = CGRectMake(leftSpace, 0, selectedCityBtn.bounds.size.width, itemSuperViewHeight);
         _selectedCityBtn = selectedCityBtn;
         [self.itemSuperView addSubview:selectedCityBtn];
-     
+        
         UIView *selectedSingView = [[UIView alloc] init];
-        selectedSingView.backgroundColor = selecterColor?:ColorRed;
+        selectedSingView.backgroundColor = [TZCityListSelectedStyle selectedStyle].selectedColor;
         CGFloat selectedSingViewHeight = 0.8;
         selectedSingView.bounds = CGRectMake(0, 0, 40, selectedSingViewHeight);
         selectedSingView.center = CGPointMake(selectedCityBtn.center.x, itemSuperView.frame.size.height-selectedSingViewHeight);
@@ -78,7 +84,7 @@ static CGFloat itemSuperViewHeight = 30;
         [self.itemSuperView addSubview:selectedSingView];
         _selectedSignView = selectedSingView;
         
-       
+        
     }
     return self;
 }
@@ -102,7 +108,7 @@ static CGFloat itemSuperViewHeight = 30;
         NSString *selectedItemName = _selectedItemNameArr[i];
         UIButton *item = [[UIButton alloc] init];
         item.titleLabel.font = [UIFont systemFontOfSize:14];
-        [item setTitleColor:ColorNormal forState:UIControlStateNormal];
+        [item setTitleColor:TextColorNormal forState:UIControlStateNormal];
         [item setTitle:selectedItemName forState:UIControlStateNormal];
         [item sizeToFit];
         CGFloat itemX = lastItemMaxX+leftSpace;
@@ -113,7 +119,7 @@ static CGFloat itemSuperViewHeight = 30;
         [self.itemArr addObject:item];
         
     }
-      self.selectedCityBtn.frame = CGRectMake(lastItemMaxX+leftSpace, 0, self.selectedCityBtn.bounds.size.width, itemSuperViewHeight);
+    self.selectedCityBtn.frame = CGRectMake(lastItemMaxX+leftSpace, 0, self.selectedCityBtn.bounds.size.width, itemSuperViewHeight);
     [self.itemArr addObject:self.selectedCityBtn];
     
     self.selectedCityBtn.hidden = isLast;
@@ -150,11 +156,11 @@ static CGFloat itemSuperViewHeight = 30;
 //- (void)chenge
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

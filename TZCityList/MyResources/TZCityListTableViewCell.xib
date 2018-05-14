@@ -26,15 +26,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3F-4c-FqI">
-                        <rect key="frame" x="45.5" y="8" width="30" height="29"/>
+                        <rect key="frame" x="55.5" y="14" width="16" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal">
+                        <state key="normal" image="ic_blueTick.png">
                             <color key="titleColor" red="1" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="q3F-4c-FqI" firstAttribute="leading" secondItem="fQR-iA-4uw" secondAttribute="trailing" constant="-5" id="JZL-wj-b37"/>
+                    <constraint firstItem="q3F-4c-FqI" firstAttribute="leading" secondItem="fQR-iA-4uw" secondAttribute="trailing" constant="5" id="JZL-wj-b37"/>
                     <constraint firstItem="q3F-4c-FqI" firstAttribute="centerY" secondItem="fQR-iA-4uw" secondAttribute="centerY" id="W1O-yc-ZIh"/>
                     <constraint firstItem="fQR-iA-4uw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="cMZ-Sl-BNT"/>
                     <constraint firstItem="fQR-iA-4uw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dfl-ct-btf"/>
@@ -47,4 +47,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_blueTick.png" width="16" height="16"/>
+    </resources>
 </document>

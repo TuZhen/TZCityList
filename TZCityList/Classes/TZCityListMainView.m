@@ -11,11 +11,12 @@
 #import "TZCityListCollectionCell.h"
 #import "TZCityModel.h"
 #import "TZCityListMainHeaderView.h"
+#import "TZCityListSelectedStyle.h"
 
 
 static NSString *TZCityListCollectionCellID = @"TZCityListCollectionCell.h";
 @interface TZCityListMainView ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,KLCityListCollectionCellDelegate>
-@property (nonatomic ,strong) UIColor * selectedColor; //选中颜色
+
 
 @property (nonatomic ,strong) UICollectionView * myCollectionView; //
 @property (nonatomic ,strong) TZCityListMainHeaderView * headerView; //
@@ -31,11 +32,11 @@ static NSString *TZCityListCollectionCellID = @"TZCityListCollectionCell.h";
 @end
 #define DB_NAME  @"City.db"
 @implementation TZCityListMainView
-- (instancetype)initWithSelectedColor:(UIColor *)selectedColor{
+- (instancetype)init{
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     if (self = [super initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)]) {
 //        self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
-        _selectedColor = selectedColor;
+
         [self prepareUI];
         [self makedateSourceWithSelectedIndex:0 CityCode:@"0" AndParentID:@"0086" SuccessBlcik:nil FinallBlock:nil];
         [self addSubview:self.myCollectionView];
@@ -43,6 +44,11 @@ static NSString *TZCityListCollectionCellID = @"TZCityListCollectionCell.h";
     return self;
 }
 
+#pragma mark - 私有方法
+- (void)setSelectedStyle:(TZCityListSelectedStyle *)selectedStyle{
+    _selectedStyle = selectedStyle;
+    [selectedStyle saveSelectedStyle];
+}
 
 - (void)prepareUI{
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
@@ -52,7 +58,7 @@ static NSString *TZCityListCollectionCellID = @"TZCityListCollectionCell.h";
     
     CGFloat headerViewHeight = 65;
     CGFloat headerViewY = myCollecionViewY - headerViewHeight;
-    _headerView = [[TZCityListMainHeaderView alloc] initWithFrame:CGRectMake(0, headerViewY, screenSize.width, headerViewHeight) WithSelectedColor:self.selectedColor];
+    _headerView = [[TZCityListMainHeaderView alloc] initWithFrame:CGRectMake(0, headerViewY, screenSize.width, headerViewHeight)];
     __weak typeof(self) weakSelf = self;
     _headerView.cancelBtnDidClickBlock = ^{
         [weakSelf dismissAction];
