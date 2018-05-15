@@ -32,7 +32,7 @@
     __weak typeof(self) weakSelf = self;
     TZCityListSelectedStyle *style = [[TZCityListSelectedStyle alloc] init];
     style.selectedColor = [UIColor colorWithRed:96/255.0 green:136/255.0 blue:246/255.0 alpha:1];
-    TZCityListMainView *cityView = [[TZCityListMainView alloc] initWithSelectedStyle:style];
+    TZCityListMainView *cityView = [[TZCityListMainView alloc] initWithSelectedStyle:nil];
     [cityView show];
     cityView.finishBlock = ^(NSArray *cityArr) {
         weakSelf.cityLabel.text = [cityArr componentsJoinedByString:@"\t"];
