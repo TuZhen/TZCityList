@@ -11,8 +11,15 @@
 
 @interface TZCityListMainView : UIView
 
-/** 选中样式 */
-@property (nonatomic ,strong) TZCityListSelectedStyle * selectedStyle;
+
+
+/**
+ 获取城市列表实例化对象
+
+ @param selectedStyle 选中样式，可以为NUll
+ @return 城市列表实例化对象
+ */
+- (instancetype)initWithSelectedStyle:(TZCityListSelectedStyle *__nullable)selectedStyle;
 
 /** 展示CityList视图 */
 - (void)show;

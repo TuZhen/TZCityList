@@ -14,6 +14,7 @@
 #import "TZCityListMainHeaderView.h"
 #import "TZCityListMainView.h"
 #import "TZCityListManage.h"
+#import "TZCityListSelectedStyle.h"
 #import "TZCityListTableViewCell.h"
 #import "TZCityModel.h"
 #import "TZCityList.h"

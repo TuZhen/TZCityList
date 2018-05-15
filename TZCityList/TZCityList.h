@@ -9,6 +9,5 @@
 #define TZCityList_h
 
 #import "TZCityListMainView.h"
-#import "TZCityListMainHeaderView.h"
 #import "TZCityListSelectedStyle.h"
 #endif /* TZCityList_h */

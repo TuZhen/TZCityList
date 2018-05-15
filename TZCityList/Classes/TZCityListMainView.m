@@ -27,16 +27,18 @@ static NSString *TZCityListCollectionCellID = @"TZCityListCollectionCell.h";
 @property (nonatomic,strong) NSMutableDictionary *selectedCityDic;
 @property (nonatomic ,strong) NSMutableArray * cityNameArr; //
 
+/** 选中样式 */
+@property (nonatomic ,strong) TZCityListSelectedStyle * selectedStyle;
 
 
 @end
 #define DB_NAME  @"City.db"
 @implementation TZCityListMainView
-- (instancetype)init{
+- (instancetype)initWithSelectedStyle:(TZCityListSelectedStyle *__nullable)selectedStyle{
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     if (self = [super initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)]) {
 //        self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
-
+        self.selectedStyle = selectedStyle;
         [self prepareUI];
         [self makedateSourceWithSelectedIndex:0 CityCode:@"0" AndParentID:@"0086" SuccessBlcik:nil FinallBlock:nil];
         [self addSubview:self.myCollectionView];
@@ -141,12 +143,13 @@ static NSString *TZCityListCollectionCellID = @"TZCityListCollectionCell.h";
     self.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
     self.headerView.frame = headerStartFrame;
     self.myCollectionView.frame = collectionStartFrame;
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.3 animations:^{
-        self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
-        self.headerView.frame = headerEndFrame;
-        self.myCollectionView.frame = collectionEndFrame;
+        weakSelf.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
+        weakSelf.headerView.frame = headerEndFrame;
+        weakSelf.myCollectionView.frame = collectionEndFrame;
     } completion:^(BOOL finished) {
-        
+        [keyWindow bringSubviewToFront:weakSelf];
     }];
 
    

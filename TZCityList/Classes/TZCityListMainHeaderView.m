@@ -13,6 +13,7 @@
 
 static CGFloat leftSpace = 15;
 static CGFloat itemSuperViewHeight = 30;
+static CGFloat selectedSingViewHeight = 0.8;
 @interface TZCityListMainHeaderView()
 @property (nonatomic ,strong) UIButton *selectedCityBtn; //请选择按钮
 @property (nonatomic ,strong) UIView * itemSuperView; //添加地址按钮的父视图层
@@ -67,6 +68,7 @@ static CGFloat itemSuperViewHeight = 30;
         _itemSuperView = itemSuperView;
         
         UIButton *selectedCityBtn = [[UIButton alloc] init];
+        selectedCityBtn.backgroundColor = self.backgroundColor;
         selectedCityBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         [selectedCityBtn setTitleColor:[TZCityListSelectedStyle selectedStyle].selectedColor forState:UIControlStateNormal];
         [selectedCityBtn setTitle:@"请选择" forState:UIControlStateNormal];
@@ -77,7 +79,6 @@ static CGFloat itemSuperViewHeight = 30;
         
         UIView *selectedSingView = [[UIView alloc] init];
         selectedSingView.backgroundColor = [TZCityListSelectedStyle selectedStyle].selectedColor;
-        CGFloat selectedSingViewHeight = 0.8;
         selectedSingView.bounds = CGRectMake(0, 0, 40, selectedSingViewHeight);
         selectedSingView.center = CGPointMake(selectedCityBtn.center.x, itemSuperView.frame.size.height-selectedSingViewHeight);
         selectedSingView.layer.cornerRadius = selectedSingViewHeight*0.5;
@@ -107,6 +108,7 @@ static CGFloat itemSuperViewHeight = 30;
         
         NSString *selectedItemName = _selectedItemNameArr[i];
         UIButton *item = [[UIButton alloc] init];
+        item.backgroundColor = self.backgroundColor;;
         item.titleLabel.font = [UIFont systemFontOfSize:14];
         [item setTitleColor:TextColorNormal forState:UIControlStateNormal];
         [item setTitle:selectedItemName forState:UIControlStateNormal];
@@ -119,7 +121,14 @@ static CGFloat itemSuperViewHeight = 30;
         [self.itemArr addObject:item];
         
     }
-    self.selectedCityBtn.frame = CGRectMake(lastItemMaxX+leftSpace, 0, self.selectedCityBtn.bounds.size.width, itemSuperViewHeight);
+    
+     __weak typeof(self) weakSelf = self;
+    [self.itemSuperView bringSubviewToFront:self.selectedCityBtn];
+    [self.itemSuperView bringSubviewToFront:self.selectedSignView];
+    [UIView animateWithDuration:0.25 animations:^{
+        
+       weakSelf.selectedCityBtn.frame = CGRectMake(lastItemMaxX+leftSpace, 0, self.selectedCityBtn.bounds.size.width, itemSuperViewHeight);
+    }];
     [self.itemArr addObject:self.selectedCityBtn];
     
     self.selectedCityBtn.hidden = isLast;
@@ -135,7 +144,11 @@ static CGFloat itemSuperViewHeight = 30;
 - (void)changeSelectedSignViewCenterWithItemIndex:(NSInteger)itemIndex{
     CGFloat selectedSingViewHeight = 0.8;
     UIButton *item = self.itemArr[itemIndex];
-    self.selectedSignView.center = CGPointMake(CGRectGetMaxX(item.frame)-item.bounds.size.width*0.5, self.itemSuperView.frame.size.height-selectedSingViewHeight);
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        weakSelf.selectedSignView.center = CGPointMake(CGRectGetMaxX(item.frame)-item.bounds.size.width*0.5, weakSelf.itemSuperView.frame.size.height-selectedSingViewHeight);
+    }];
 }
 #pragma mark - Acion
 - (void)cancelBtnDidClick{
