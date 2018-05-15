@@ -30,10 +30,9 @@
 }
 - (IBAction)btnDIdClickAction:(id)sender {
     __weak typeof(self) weakSelf = self;
-    TZCityListMainView *cityView = [[TZCityListMainView alloc] init];
-    TZCityListSelectedStyle *style = [[TZCityListSelectedStyle alloc] ];
+    TZCityListSelectedStyle *style = [[TZCityListSelectedStyle alloc] init];
     style.selectedColor = [UIColor colorWithRed:96/255.0 green:136/255.0 blue:246/255.0 alpha:1];
-    cityView.selectedStyle = style;
+    TZCityListMainView *cityView = [[TZCityListMainView alloc] initWithSelectedStyle:style];
     [cityView show];
     cityView.finishBlock = ^(NSArray *cityArr) {
         weakSelf.cityLabel.text = [cityArr componentsJoinedByString:@"\t"];
